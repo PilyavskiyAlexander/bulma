@@ -1,0 +1,21 @@
+$main_color: #00d1b2;
+
+//#header-not-main{
+//  width: 100%;
+//  border-top: 5px solid $main_color;
+//}
+
+
+#header-not-main {
+
+  margin-top: -52px;
+  z-index: 0;
+  height: 60px;
+  overflow: hidden;
+
+}
+.make-main-image{
+  margin: 10px 10px 0 0;
+  float: left;
+  cursor: pointer;
+}

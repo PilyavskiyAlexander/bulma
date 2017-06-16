@@ -1,0 +1,109 @@
+$main_color: #00d1b2;
+::selection {
+  background: #00d1b2;
+}
+header{
+  width: 100%;
+  border-top: 5px solid $main_color;
+}
+
+.logo {
+  color: $main_color;
+  font-size: 1.2em;
+}
+
+.nav{
+  background: rgba(255,255,255, 0) !important;
+  .nav-item{
+    &:hover{
+      color: $main_color;
+    }
+  }
+
+}
+.nav-toggle span{
+  color: #fff;
+  border-color: #fff;
+  background: #fff;
+}
+@media screen and (max-width: 768px){
+  .carousel-caption {
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    .carousel-body {
+      min-height: 100px;
+    }
+
+    .control input{
+      border-bottom-left-radius: 10px ;
+      border-top-left-radius: 10px;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav-item {
+    color: #fff !important;
+  }
+  .carousel-caption {
+      .carousel-body {
+      min-height: 100px;
+    }
+
+    .control input{
+      border-bottom-left-radius: 10px ;
+      border-top-left-radius: 10px;
+    }
+  }
+}
+.field.has-addons .control:first-child .button, .field.has-addons .control:first-child .input, .field.has-addons .control:first-child .select select {
+  border-bottom-left-radius: 27px;
+  border-top-left-radius: 27px;
+}
+.field.has-addons .control:last-child .button, .field.has-addons .control:last-child .input, .field.has-addons .control:last-child .select select {
+  border-bottom-right-radius: 27px;
+  border-top-right-radius: 27px;
+}
+
+.carousel-caption {
+  padding-bottom: 10%;
+  padding-left: 7%;
+  padding-right: 7%;
+
+  .carousel-body{
+    width: 100%;
+    min-height: 150px;
+    //background: rgba(0,0,0, .4);
+    border-radius: 5px;
+
+  }
+}
+
+#search {
+  //position: absolute;
+  //top: 0;
+  //left: 0;
+  //width: 100%;
+  margin-top: -52px;
+  z-index: 0;
+  //height: 750px;
+  //background: #4a4a4a url("images/search-background.jpg") no-repeat center top;
+  //background-size: cover;
+  //background-size: 100% auto;
+
+}
+
+.search-block{
+  position: relative;
+  margin-top: -20px;
+}
+
+footer{
+  background: #232635;
+  min-height: 80px;
+  .nav{
+    height: 80px !important;
+    line-height: 80px !important;
+  }
+}
