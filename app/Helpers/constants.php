@@ -15,5 +15,5 @@ define("SENTENCE_3_BRAND_MAN",  110);
 define("SENTENCE_4_BRAND_MIN",  111);
 define("SENTENCE_4_BRAND_MAN",  168);
 
-define("SENTENCE_5_BRAND_MIN",  196);
+define("SENTENCE_5_BRAND_MIN",  169);
 define("SENTENCE_5_BRAND_MAN",  187);
