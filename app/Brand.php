@@ -30,13 +30,26 @@ class Brand extends Model
         return asset($path);
     }
 
-    public function scopeSentence($length)
+    public function scopeSentence($buld, $length = 0)
     {
-//        $length = $length > SENTENCE_MAX_LENGTH ? SENTENCE_MAX_LENGTH : $length;
+        $length = $length > SENTENCE_MAX_LENGTH ? SENTENCE_MAX_LENGTH : $length;
 
-//        $sentences =
-//        return !empty($this->description) ? $this->description : "" ;
-        return 12;
+        $sentences = explode('#', $this->sequence);
+
+        $sentences = array_slice($sentences, 0, $length);
+
+        $description = '';
+        foreach ($sentences as $sentence)
+        {
+            $description .= ' ' . trans('brand_sentences.'.$sentence);
+        }
+
+        $description = str_replace(ARR_FIND_DESC, [$this->brand, ' ', EMAIL, PHONE, OUR_COMPANY], $description);
+
+        $description = $length == SENTENCE_MAX_LENGTH ? $description.'<b>'.$this->description.'</b>' : $description;
+
+//        return 12;
+        return $description;
     }
 
     public function scopeBig()

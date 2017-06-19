@@ -13,7 +13,7 @@
                     </a>
                     <br>
                     <small style="font-size: 10px;">
-                        {{$product->sentence(2)}}
+                        {{$product->sentence(1)}}
                     </small>
                 </p>
             </div>

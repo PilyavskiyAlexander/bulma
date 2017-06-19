@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Integer;
 
 class Product extends Model
 {
@@ -52,11 +53,24 @@ class Product extends Model
         return asset($path);
     }
 
-    public function scopeSentence($length)
+    public function scopeSentence($buld, $length = 0)
     {
-//        $length = $length > SENTENCE_MAX_LENGTH ? SENTENCE_MAX_LENGTH : $length;
+        $length = $length > SENTENCE_MAX_LENGTH ? SENTENCE_MAX_LENGTH : $length;
 
-//        $sentences =
-        return $this->description;
+        $sentences = explode('#', $this->sequence);
+
+        $sentences = array_slice($sentences, 0, $length);
+
+        $description = '';
+        foreach ($sentences as $sentence)
+        {
+            $description .= ' ' . trans('product_sentences.'.$sentence);
+        }
+
+        $description = str_replace(ARR_FIND_DESC, [$this->brand->name, $this->name, EMAIL, PHONE, OUR_COMPANY], $description);
+
+        $description = $length == SENTENCE_MAX_LENGTH ? $description.' '.$this->description : $description;
+
+        return $description;
     }
 }

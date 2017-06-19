@@ -13,6 +13,9 @@
 
 
     Route::get('/', 'IndexController@index')->name('index');
+    Route::get('/rand', 'IndexController@rand');
+    Route::get('/randb', 'IndexController@randb');
+    Route::get('/url', 'IndexController@url');
     Route::get('/products', 'ProductController@index')->name('products');
     Route::get('/products/{url}', 'ProductController@show')->name('product.show');
     Route::get('/brands', 'BrandController@index')->name('brands');
