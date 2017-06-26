@@ -11,11 +11,9 @@
             </figure>
         </div>
         <div class="column is-6">
-            <h1 class="title"><a href="{{route('brand.show', $big_brand->url)}}">{{$big_brand->name}}</a></h1>
+            <h1 class="title"><a href="{{route('brand.show',  ['subdomain' => app()->getLocale(), 'url' => $big_brand->url])}}">{{$big_brand->name}}</a></h1>
             <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dignissimos ducimus esse hic officia omnis, pariatur quaerat. Consequatur fugit inventore ipsa labore maiores nisi, perspiciatis reiciendis soluta sunt tenetur vitae.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dignissimos ducimus esse hic officia omnis, pariatur quaerat. Consequatur fugit inventore ipsa labore maiores nisi, perspiciatis reiciendis soluta sunt tenetur vitae.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dignissimos ducimus esse hic officia omnis, pariatur quaerat. Consequatur fugit inventore ipsa labore maiores nisi, perspiciatis reiciendis soluta sunt tenetur vitae.
+                {{$big_brand->sentence(5)}}
             </div>
         </div>
     </div>

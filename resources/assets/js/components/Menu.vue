@@ -35,14 +35,14 @@
                 <div class="nav-item is-tab">
                     <div class="field is-grouped">
                         <p class="control">
-                            <a class="button is-primary" @click="showModalTrue">
+                            <a class="button is-primary"  data-toggle="modal" data-target="#requestModal">
                                 <span>{{ trans('menu.send_request') }}</span>
                             </a>
                         </p>
                     </div>
                 </div>
-                <form class="nav-item" id="demo-2">
-                    <input type="search" class="header_search">
+                <form class="nav-item" id="demo-2" action="/search" method="get">
+                    <input type="search" class="header_search" name="search">
                 </form>
             </div>
         </nav>

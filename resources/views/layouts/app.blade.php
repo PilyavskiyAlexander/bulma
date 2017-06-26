@@ -24,7 +24,7 @@
         ]) !!};
 
     </script>
-    <title> IMPEXRON GMBH </title>
+    <title> @yield('title') </title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -36,9 +36,10 @@
     @include('layouts.header')
     <modal v-if="showModal" @close="showModalFalse"></modal>
     @yield('content')
+    @include('layouts.footer')
 </div>
-@include('layouts.footer')
 @include('layouts.languages')
+@include('layouts.modal')
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 </body>

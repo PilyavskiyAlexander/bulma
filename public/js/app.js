@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 45);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -471,7 +471,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(36)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(37)))
 
 /***/ }),
 /* 2 */
@@ -833,9 +833,9 @@ module.exports = g;
  */
 
 __webpack_require__(32);
-__webpack_require__(49);
+__webpack_require__(33);
 
-window.Vue = __webpack_require__(43);
+window.Vue = __webpack_require__(44);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -843,9 +843,9 @@ window.Vue = __webpack_require__(43);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(37));
-Vue.component('header-menu', __webpack_require__(38));
-Vue.component('modal', __webpack_require__(39));
+Vue.component('example', __webpack_require__(38));
+Vue.component('header-menu', __webpack_require__(39));
+Vue.component('modal', __webpack_require__(40));
 
 Vue.prototype.trans = function (key) {
   return _.get(window.trans, key, key);
@@ -1870,7 +1870,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(35);
+window._ = __webpack_require__(36);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -1879,9 +1879,9 @@ window._ = __webpack_require__(35);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(34);
+  window.$ = window.jQuery = __webpack_require__(35);
 
-  __webpack_require__(33);
+  __webpack_require__(34);
 } catch (e) {}
 
 /**
@@ -1925,6 +1925,63 @@ if (token) {
 
 /***/ }),
 /* 33 */
+/***/ (function(module, exports) {
+
+window.onload = function () {
+
+    $('.make-main-image').on('click', function (e) {
+        e.preventDefault();e.stopPropagation();
+        $('.main-image').attr('src', $(this).attr('src'));
+    });
+
+    var $attach = $('.attach-project-file'),
+        $remove = $('.remove-project-file'),
+        $name = $('.attached-project-file');
+
+    // initially hide the remove button
+    $remove.hide();
+
+    // do this when file input has changed
+    // i.e.: a file has been selected
+    $attach.on('change', function () {
+        var val = $(this).val();
+        if (val !== '') {
+            // if value different than empty
+
+            // show the file name as text
+            // hide/text/fadeIn creates a nice effect when changing the text
+
+            $(this).parents('.field').children('.attached-project-file').hide().text(val).fadeIn();
+
+            // show the remove button
+            $remove.fadeIn();
+        } else {
+            // if value empty, means the file has been removed
+
+            // show the default text
+            $name.hide().text('Click to select a file').fadeIn();
+
+            // hide remove button
+            $remove.fadeOut();
+        }
+    });
+
+    // remove selected file when clicking the remove button
+    // prevent click bubbling to the parent label and triggering file selection
+    $remove.on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        $attach.val('').change(); // trigger change event
+    });
+
+    $('#searchInput').on('change', function () {
+        $('#search_product_brand').val($(this).val());
+    });
+};
+
+/***/ }),
+/* 34 */
 /***/ (function(module, exports) {
 
 /*!
@@ -4307,7 +4364,7 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -14567,7 +14624,7 @@ return jQuery;
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -31656,10 +31713,10 @@ return jQuery;
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(44)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(45)(module)))
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -31849,14 +31906,14 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(29),
   /* template */
-  __webpack_require__(40),
+  __webpack_require__(41),
   /* scopeId */
   null,
   /* cssModules */
@@ -31883,14 +31940,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(30),
   /* template */
-  __webpack_require__(41),
+  __webpack_require__(42),
   /* scopeId */
   null,
   /* cssModules */
@@ -31917,14 +31974,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(31),
   /* template */
-  __webpack_require__(42),
+  __webpack_require__(43),
   /* scopeId */
   null,
   /* cssModules */
@@ -31951,7 +32008,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -31980,7 +32037,7 @@ if (false) {
 }
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32029,8 +32086,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "control"
   }, [_c('a', {
     staticClass: "button is-primary",
-    on: {
-      "click": _vm.showModalTrue
+    attrs: {
+      "data-toggle": "modal",
+      "data-target": "#requestModal"
     }
   }, [_c('span', [_vm._v(_vm._s(_vm.trans('menu.send_request')))])])])])]), _vm._v(" "), _vm._m(1)])]), _vm._v(" "), (_vm.showModal) ? _c('modal', {
     on: {
@@ -32052,12 +32110,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('form', {
     staticClass: "nav-item",
     attrs: {
-      "id": "demo-2"
+      "id": "demo-2",
+      "action": "/search",
+      "method": "get"
     }
   }, [_c('input', {
     staticClass: "header_search",
     attrs: {
-      "type": "search"
+      "type": "search",
+      "name": "search"
     }
   })])
 }]}
@@ -32070,7 +32131,7 @@ if (false) {
 }
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32139,7 +32200,7 @@ if (false) {
 }
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41838,7 +41899,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -41866,27 +41927,12 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(9);
 module.exports = __webpack_require__(10);
 
-
-/***/ }),
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */
-/***/ (function(module, exports) {
-
-window.onload = function () {
-
-    $('.make-main-image').on('click', function (e) {
-        e.preventDefault();e.stopPropagation();
-        $('.main-image').attr('src', $(this).attr('src'));
-    });
-};
 
 /***/ })
 /******/ ]);

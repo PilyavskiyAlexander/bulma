@@ -1,7 +1,9 @@
 @extends('layouts.app')
-
+@section('title', trans('translates.brand') .': ' .$brand->name)
 @section('content')
     @include('brand.show.one')
+
+    @include('brand.products')
 
     @include('product.latest')
 

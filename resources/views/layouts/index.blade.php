@@ -23,7 +23,7 @@
         ]) !!};
 
     </script>
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title> @yield('title') </title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -35,11 +35,11 @@
 <body>
 <div id="app">
     <header-menu></header-menu>
-    <modal v-if="showModal" @close="showModalFalse"></modal>
     @yield('content')
+    @include('layouts.footer')
 </div>
 @include('layouts.languages')
-@include('layouts.footer')
+@include('layouts.modal')
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 </body>

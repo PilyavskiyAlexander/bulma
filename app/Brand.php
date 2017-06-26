@@ -32,6 +32,8 @@ class Brand extends Model
 
     public function scopeSentence($buld, $length = 0)
     {
+        $ARR_FIND_DESC = ['[brand]', '[product]', '[email]', '[number]', '[llccompany]' ];
+
         $length = $length > SENTENCE_MAX_LENGTH ? SENTENCE_MAX_LENGTH : $length;
 
         $sentences = explode('#', $this->sequence);
@@ -44,11 +46,10 @@ class Brand extends Model
             $description .= ' ' . trans('brand_sentences.'.$sentence);
         }
 
-        $description = str_replace(ARR_FIND_DESC, [$this->brand, ' ', EMAIL, PHONE, OUR_COMPANY], $description);
+        $description = str_replace($ARR_FIND_DESC, [$this->brand, ' ', EMAIL, PHONE, OUR_COMPANY], $description);
 
-        $description = $length == SENTENCE_MAX_LENGTH ? $description.'<b>'.$this->description.'</b>' : $description;
+        $description = $length == SENTENCE_MAX_LENGTH ? $description.' '.$this->description : $description;
 
-//        return 12;
         return $description;
     }
 

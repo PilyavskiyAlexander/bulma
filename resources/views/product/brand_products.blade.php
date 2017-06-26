@@ -11,11 +11,12 @@
                             <div class="columns">
                                 @endif
                                 <div class="column">
-                                    <a href="{{route('product.show', $product->url)}}" style="text-decoration: none;">
+                                    <a href="{{route('product.show', ['subdomain' => app()->getLocale(), 'url' => $product->url])}}" style="text-decoration: none;">
                                         {{$product->name}}
                                         <span class="tag is-warning" style="float: right;">{{$product->brand->name}}</span>
                                     </a>
                                 </div>
+                                @include('layouts.align_column')
                                 @if($loop->iteration % 3 == 0)
                             </div>
                         @endif

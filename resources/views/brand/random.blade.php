@@ -11,7 +11,7 @@
                             <div class="columns">
                                 @endif
                                 <div class="column">
-                                    <a href="{{route('brand.show', $brands->url)}}" style="text-decoration: none;">
+                                    <a href="{{route('brand.show', ['subdomain' => app()->getLocale(), 'url' => $brands->url])}}" style="text-decoration: none;">
                                         {{$brands->name}}
                                     </a>
                                 </div>

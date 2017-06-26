@@ -8,7 +8,7 @@
         <div class="media-content">
             <div class="content">
                 <p>
-                    <a href="{{route('product.show', $product->url)}}">
+                    <a href="{{route('product.show', ['subdomain' => app()->getLocale(), 'url' => $product->url])}}">
                         <strong>{{$product->name}}</strong> <small>{{$product->brand->name}}</small>
                     </a>
                     <br>

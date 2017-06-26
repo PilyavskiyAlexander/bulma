@@ -15,9 +15,15 @@ class CheckLocale
      */
     public function handle($request, Closure $next)
     {
+
+        if(!empty($request->subdomain) && empty(session('lang'))){
+            app()->setLocale($request->subdomain);
+        }
+
         if(!empty(session('lang'))){
             app()->setLocale(session('lang'));
         }
+
 
         return $next($request);
     }

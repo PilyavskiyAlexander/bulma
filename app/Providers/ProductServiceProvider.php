@@ -15,11 +15,11 @@ class ProductServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('product.random', function($view){
-            $view->with('random_products', Product::take(21)->get());
+            $view->with('random_products', Product::inRandomOrder()->limit(21)->get());
         });
 
         view()->composer('product.latest', function($view){
-            $view->with('latest_products', Product::take(15)->get());
+            $view->with('latest_products', Product::inRandomOrder()->limit(15)->get());
         });
 
     }

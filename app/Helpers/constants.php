@@ -4,7 +4,7 @@ define("DEFAULT_IMAGE_BIG",  "images/default_big.png");
 define("SENTENCE_MAX_LENGTH",  5);
 
 
-define("ARR_FIND_DESC",  ['[brand]', '[product]', '[email]', '[number]', '[llccompany]' ]);
+$ARR_FIND_DESC =  ['[brand]', '[product]', '[email]', '[number]', '[llccompany]' ];
 define("EMAIL",  'sales@impexron.de');
 define("PHONE",  '+49 7121 305 9012');
 define("OUR_COMPANY",  'IMPEXRON GMBH');

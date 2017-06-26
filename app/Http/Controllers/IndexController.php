@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\ClientRequest;
 use App\Product;
 use App\Services\IndexService;
 use Illuminate\Http\Request;
@@ -72,7 +73,7 @@ class IndexController extends Controller
         foreach ($products as $product) {
             $url = str_replace(['.', ',', ' ', '\\', '|', '/', ':', '"', "'", '@',  "?", "#", "[", "]", "@", "!", "$", "&",
                 "(", ")", "*", "+", ";", "="], '-', $product->name);
-            $product->url = str_replace(['----', '--', '---',], '-', $url);
+            $product->url = str_replace(['----', '---', '--'], '-', $url);
             $product->save();
         }
     }

@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'de',
 
     /*
     |--------------------------------------------------------------------------
@@ -179,6 +179,7 @@ return [
         App\Providers\LanguageServiceProvider::class,
         App\Providers\ProductServiceProvider::class,
         App\Providers\BrandServiceProvider::class,
+        App\Providers\UnitTypeProvider::class,
 
     ],
 

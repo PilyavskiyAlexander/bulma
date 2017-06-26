@@ -15,15 +15,15 @@ class BrandServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('brand.latest', function($view){
-            $view->with('latest_brands', Brand::take(21)->get());
+            $view->with('latest_brands', Brand::inRandomOrder()->limit(21)->get());
         });
 
         view()->composer('brand.random', function($view){
-            $view->with('random_brands', Brand::take(28)->get());
+            $view->with('random_brands', Brand::inRandomOrder()->limit(28)->get());
         });
 
         view()->composer('brand.show.big', function($view){
-            $view->with('big_brand', Brand::take(1)->get()->first());
+            $view->with('big_brand', Brand::inRandomOrder()->limit(1)->get()->first());
         });
 
     }
