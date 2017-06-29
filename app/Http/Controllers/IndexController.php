@@ -73,8 +73,15 @@ class IndexController extends Controller
         foreach ($products as $product) {
             $url = str_replace(['.', ',', ' ', '\\', '|', '/', ':', '"', "'", '@',  "?", "#", "[", "]", "@", "!", "$", "&",
                 "(", ")", "*", "+", ";", "="], '-', $product->name);
-            $product->url = str_replace(['----', '---', '--'], '-', $url);
+            $product->url = str_replace(['----', '---', '--'], '-', trim($url));
             $product->save();
+        }
+        $brands = Brand::all();
+        foreach ($brands as $brand) {
+            $url = str_replace(['.', ',', ' ', '\\', '|', '/', ':', '"', "'", '@',  "?", "#", "[", "]", "@", "!", "$", "&",
+                "(", ")", "*", "+", ";", "="], '-', $brand->name);
+            $brand->url = str_replace(['----', '---', '--'], '-', trim($url));
+            $brand->save();
         }
     }
 
