@@ -195,6 +195,8 @@ return [
     '185' => 'We work with 17 000 brands that have a wide assortment of products.',
     '186' => 'Employees of our company speak English, French, German, Italian and other languages, that makes it possible to communicate directly with the manufacturer.',
     '187' => 'You don’t have to think about customs clearance, we will take care of it.',
+    '188' => 'Employees of our company speak English, French, German, Italian and other languages, that makes it possible to communicate directly with the manufacturer.',
+    '189' => 'You don’t have to think about customs clearance, we will take care of it.',
 
 
 

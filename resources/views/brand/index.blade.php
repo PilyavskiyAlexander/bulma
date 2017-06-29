@@ -42,6 +42,8 @@
                 {{ $brands->links() }}
             </div>
         </div>
+
+        @include('contacts.pages')
     </section>
 
 

@@ -40,6 +40,8 @@
                 {{ $products->links() }}
             </div>
         </div>
-    </section>
 
+        @include('contacts.pages')
+
+    </section>
 @endsection

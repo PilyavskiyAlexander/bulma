@@ -22,7 +22,7 @@ define("SENTENCE_4_BRAND_MIN",  111);
 define("SENTENCE_4_BRAND_MAX",  168);
 
 define("SENTENCE_5_BRAND_MIN",  169);
-define("SENTENCE_5_BRAND_MAX",  187);
+define("SENTENCE_5_BRAND_MAX",  189);
 
 
 define("SENTENCE_1_PRODUCT_MIN",  1);

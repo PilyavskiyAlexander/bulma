@@ -12,4 +12,6 @@
     @include('brand.show.big')
 
     @include('brand.random')
+
+    @include('contacts.pages')
 @endsection
