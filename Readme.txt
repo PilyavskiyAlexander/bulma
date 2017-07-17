@@ -1,0 +1,1 @@
+After start server, you need put "php artisan queue:work" in terminal

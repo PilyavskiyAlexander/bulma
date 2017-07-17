@@ -27,6 +27,10 @@ class RequestsController extends Controller
             $client_request->file = 'storage/documents/' . $client_request->id . '/' . $original_name;
             $client_request->save();
         }
+        else{
+            $client_request->file = 'images/logo.png';
+            $client_request->save();
+        }
 
         event(new EmailEvent($client_request));
 

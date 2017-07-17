@@ -31,6 +31,6 @@ class ClientRequest extends Mailable
     public function build()
     {
         return $this->view('email.client_request')
-                    ->attach($this->clientRequest->file);
+                    ->attach(asset($this->clientRequest->file));
     }
 }

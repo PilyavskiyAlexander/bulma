@@ -7,7 +7,7 @@ use App\Mail\ClientRequest;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class EmailEventListener
+class EmailEventListener implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -27,7 +27,7 @@ class EmailEventListener
      */
     public function handle(EmailEvent $event)
     {
+        \Log::info('Test');
         \Mail::to('pilyavskiy.a@gmail.com')->send(new ClientRequest($event->clientRequest));
-
     }
 }
